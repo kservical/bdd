@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title>
+	Reservation
+	</title>
+</head>
+<body>
+
+	<form method="POST" action="{{url_for('after_form_date')}}">
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+		<ul class=flashes>
+			{% for message in messages%}		
+			<li>  {{ message }}</li>
+			{% endfor%}
+		</ul>
+		{% endif %}
+		{% endwith %}
+		<input type="text" name="debut" placeholder="date debut(AAAA-MM-JJ)">
+		<input type="text" name="fin" placeholder="date fin(AAAA-MM-JJ)">
+		<input type="hidden" name="dico" value="{{dico}}">
+		<input type="submit" value="Soumettre">
+	
+	</form>
+
+</body>

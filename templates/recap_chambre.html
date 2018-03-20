@@ -1,0 +1,17 @@
+<form method="POST" action="{{url_for('select_client')}}">
+	  {%if hasError %} <p><strong><font color="red"> {{hasError}} </font></strong></p> {%endif%}
+	  {%if rows %}
+		{% for row in rows %}
+		{% for col in rows %}
+		<p>{{col}}</p>
+		{% endfor %}
+		{% endfor %}
+	  {%endif%}
+	{%if desc %}
+		{% for row in desc %}
+		<p>{{row}}</p>
+		{% endfor %}
+	{% endif %}
+	  <input type="submit" value="valider la chambre">
+	<input type="hidden" name="dico" value="{{dico}}">
+</form>

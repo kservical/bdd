@@ -1,0 +1,17 @@
+<form method="POST" action="{{url_for('reservation_final')}}" >
+	  {%if hasError %} <p><strong><font color="red"> {{hasError}} </font></strong></p> {%endif%}
+	  {%if rows %}
+		{% for row in rows %}
+		{% for col in rows %}
+		<p>{{col}}</p>
+		{% endfor %}
+		{% endfor %}
+	  {%endif%}
+	{%if desc %}
+		{% for row in desc %}
+		<p>{{row}}</p>
+		{% endfor %}
+	{% endif %}
+	<input type="text" name="dico" value="{{dico}}">
+	  <input type="submit" value="valider la réservation final">
+</form>

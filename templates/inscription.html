@@ -1,0 +1,10 @@
+<form method="POST" action="{{url_for('creation_compte')}}">
+	{%if hasError %} <p><strong><font color="red"> {{hasError}} </font></strong></p> {%endif%}
+	<span> nom : </span> <input type="text" name="insert_nom" placeholder="Ex:Dupont" /><br>
+	<span> prenom : </span> <input type="text" name="insert_prenom" placeholder="Ex:Jean" /><br>
+	<span> @mail : </span> <input type="text" name="insert_mail" placeholder="Ex:Jean.Dupont@toto.fr" />
+	<span> password : </span> <input type="text" name="insert_password" placeholder="Ex:secret" />
+	<input type="hidden" name="dico" value="{{dico}}">
+	<input type="submit" value="Soumettre" />
+</form>
+
